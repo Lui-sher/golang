@@ -20,10 +20,10 @@ import (
 type person struct {
 	Name string `json:"name"`
 	//aqui un ejemplo del uso de omitempty s
-	Hobby string `json:"hobby,omitempty"`
-	Email string `json:"-"`
+	Hobby string `json:"hobby,omitempty"` // ("omitempty") omite esta etiqueta si está vacia
+	Email string `json:"-"`               // ("-") se omite esta etiqueta siempre, esté o no vacia
 	//ejemplo de doble asignacion de tipos
-	Money float64 `json:"money,string"`
+	Money float64 `json:"money,string"` // ("string") en formato json simpre será string
 }
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
 	bs1, _ := json.Marshal(p1)
 	fmt.Println(string(bs1))
 
-	p2 := person{Name: "Jane", Email: "e@d.com"}
+	p2 := person{Name: "Jane", Email: "e@d.com", Money: 5.88}
 	bs2, _ := json.Marshal(p2)
 	fmt.Println(string(bs2))
 

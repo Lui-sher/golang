@@ -11,7 +11,7 @@ import (
 
 func main() {
 	fmt.Println("-------------------1---------------------------")
-	var map_1 map[int]int
+	var map_1 map[int]int //map creado (es nil)
 
 	// Checking if the map is nil or not
 	if map_1 == nil {
@@ -25,7 +25,7 @@ func main() {
 	// Creating and initializing a map
 	// Using shorthand declaration and
 	// using map literals
-	map_2 := map[int]string{
+	map_2 := map[int]string{ //creacion de map e inicializado usando elementos
 
 		90: "Dog",
 		91: "Cat",
@@ -38,18 +38,18 @@ func main() {
 	fmt.Println("-------------------3---------------------------")
 	// Creating a map
 	// Using make() function
-	var My_map = make(map[float64]string)
+	var My_map = make(map[float64]string) //map creado e inicializado con make por ende vacio
 	fmt.Println(My_map)
 
 	// As we already know that make() function
 	// always returns a map which is initialized
 	// So, we can add values in it
-	My_map[1.3] = "Rohit"
+	My_map[1.3] = "Rohit" //agregando elementos al map ya inicalizado con make
 	My_map[1.5] = "Sumit"
 	fmt.Println(My_map)
 	fmt.Println("-------------------4---------------------------")
 	// Creating and initializing a map
-	m_a_p := map[int]string{
+	m_a_p := map[int]string{ // igual que la linea 28
 
 		90: "Dog",
 		91: "Cat",
@@ -59,9 +59,9 @@ func main() {
 	}
 
 	// Iterating map using for rang loop
-	for id, pet := range m_a_p {
+	for id, pet := range m_a_p { //iterar un map usando un for, range es una funcion que retorna dos valores
 
-		fmt.Println(id, pet)
+		fmt.Println(id, ":", pet)
 	}
 	fmt.Println("-------------------5---------------------------")
 	// Creating and initializing a map
@@ -84,4 +84,15 @@ func main() {
 	m_a_p[91] = "PIG"
 	m_a_p[93] = "DONKEY"
 	fmt.Println("\nMap after updating values of the map:\n", m_a_p)
+
+	frase := "Hola mundo!"
+
+	for index, caracter := range frase {
+		fmt.Println(index, ":", caracter)
+	}
 }
+
+/*
+CONCLUSION: podemos iterar en cada elemento de map, array, slice, hasta string
+usando el ciclo for y la funcion range
+*/
