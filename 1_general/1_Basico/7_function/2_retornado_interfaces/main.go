@@ -10,8 +10,8 @@ type items struct {
 
 func main() {
 	// type & value MUST BE NIL
-	p := adult(19)
-
+	p := adult(5)
+	fmt.Println(p)
 	switch p.(type) {
 
 	case nil:
@@ -26,8 +26,6 @@ func main() {
 		fmt.Println("Es una variable tipo string")
 	case person:
 		fmt.Println("Es una variable tipo person")
-	case items:
-		fmt.Println("Es una variable tipo items")
 	default:
 		fmt.Println("No es ninguno de los tipos anteriores")
 
@@ -45,8 +43,14 @@ func adult(n int) interface{} {
 	//var res *person = nil
 	res := person{}
 
-	if n < 18 {
+	if n <= 0 {
 		return nil // type: nil | value: nil
+	}
+	if n > 0 && n < 5 {
+		return "String"
+	}
+	if n == 5 {
+		return true
 	}
 	return res // type: *person | value: nil
 }
